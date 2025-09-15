@@ -1,0 +1,42 @@
+#ui-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    max-width: 300px;
+}
+
+#transcription {
+    margin: 10px 0;
+    min-height: 60px;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+}
+
+#mic-button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#mic-button.listening {
+    background: #44ff44;
+    animation: pulse 1.5s infinite;
+}
+
+#status {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #aaa;
+}

@@ -1,0 +1,12 @@
+accelerate
+cuda-python
+diffusers
+fastapi
+onnx
+onnx_graphsurgeon
+torch
+torchaudio
+torchvision
+transformers
+uvicorn
+websockets

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "table1",
+    "name": "table",
+    "color": "brown",
+    "path": "../../models/table1.glb",
+    "position": "-0.0784061865471295 0.3 1.2170827371776092"
+  },
+  {
+    "id": "tent1",
+    "name": "tent",
+    "color": "blue",
+    "path": "../../models/tent1.glb",
+    "position": "-0.0784061865471295 0.3 1.2170827371776092"
+  },
+  {
+    "id": "chair1",
+    "name": "chair",
+    "color": "blue",
+    "path": "../../models/chair1.glb",
+    "position": "-0.0784061865471295 0.5 1.2170827371776092"
+  },
+  {
+    "id": "chair2",
+    "name": "chair",
+    "color": "blue",
+    "path": "../../models/chair2.glb",
+    "position": "-0.0784061865471295 0.5 1.2170827371776092"
+  },
+  {
+    "id": "table2",
+    "name": "table",
+    "color": "brown",
+    "path": null,
+    "position": "0 0.5 -1"
+  }
+]
