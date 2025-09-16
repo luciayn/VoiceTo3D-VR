@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GLB Model Viewer Carousel</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: 10;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .viewer-container {
+      flex: 1;
+      position: relative;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #fff;
+    }
+
+    .controls {
+      text-align: center;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: 10;
+      margin-bottom: 20px;
+      position: relative;
+      bottom: 10px;
+    }
+
+
+    button {
+      background-color: #e0e0e0;
+      color: #333;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 20px;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button:hover {
+      background-color: #d5d5d5;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>GLB Model Viewer Carousel</h1>
+  </div>
+
+  <div class="viewer-container">
+    <model-viewer id="viewer"
+      src="models/apple1.glb"
+      alt="3D model"
+      auto-rotate
+      camera-controls
+      ar>
+    </model-viewer>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevModel()">⏮ Previous</button>
+    <span id="modelName">apple1.glb</span>
+    <button onclick="nextModel()">Next ⏭</button>
+  </div>
+
+  <script>
+    const modelFiles = [
+      "apple1.glb",
+      "axe1.glb",
+      "backpack1.glb",
+      "basket1.glb",
+      "bed1.glb",
+      "book1.glb",
+      "book2.glb",
+      "book3.glb",
+      "bottle1.glb",
+      "bottle2.glb",
+      "bottle3.glb",
+      "bottle4.glb",
+      "bottle5.glb",
+      "box1.glb",
+      "box2.glb",
+      "box3.glb",
+      "box4.glb",
+      "box5.glb",
+      "box6.glb",
+      "bread1.glb",
+      "bread2.glb",
+      "cabin_house1.glb",
+      "campsite1.glb",
+      "car1.glb",
+      "car2.glb",
+      "car3.glb",
+      "card1.glb",
+      "chair1.glb",
+      "chair2.glb",
+      "chair3.glb",
+      "chair5.glb",
+      "chair6.glb",
+      "chest1.glb",
+      "chest2.glb",
+      "computer1.glb",
+      "computer2.glb",
+      "cup1.glb",
+      "cup2.glb",
+      "cup3.glb",
+      "cushion1.glb",
+      "desk1.glb",
+      "dining_set1.glb",
+      "dog1.glb",
+      "dog2.glb",
+      "dog3.glb",
+      "dog_statue1.glb",
+      "dog_statue2.glb",
+      "flower_pot1.glb",
+      "gift1.glb",
+      "guitar1.glb",
+      "hat1.glb",
+      "helicopter1.glb",
+      "house1.glb",
+      "house2.glb",
+      "kettle1.glb",
+      "lamp1.glb",
+      "library1.glb",
+      "medieval_table_with_chairs.glb",
+      "medieval_table_with_chairs2.glb",
+      "picnic_table1.glb",
+      "pillow1.glb",
+      "plate1.glb",
+      "rock1.glb",
+      "rock2.glb",
+      "rock4.glb",
+      "rug1.glb",
+      "saw1.glb",
+      "shovel1.glb",
+      "slide1.glb",
+      "soccer_ball1.glb",
+      "sofa1.glb",
+      "soldier_toy1.glb",
+      "soldier_toy2.glb",
+      "stool1.glb",
+      "swing1.glb",
+      "table1.glb",
+      "table2.glb",
+      "table3.glb",
+      "table4.glb",
+      "table5.glb",
+      "tent1.glb",
+      "tree1.glb",
+      "tree2.glb",
+      "tree4.glb",
+      "tv1.glb",
+      "watch1.glb",
+      "workspace1.glb"
+    ];
+
+    let currentIndex = 0;
+    const viewer = document.getElementById("viewer");
+    const modelName = document.getElementById("modelName");
+
+    function updateViewer() {
+      const file = modelFiles[currentIndex];
+      viewer.src = `models/${file}`;
+      modelName.textContent = file;
+    }
+
+    function nextModel() {
+      currentIndex = (currentIndex + 1) % modelFiles.length;
+      updateViewer();
+    }
+
+    function prevModel() {
+      currentIndex = (currentIndex - 1 + modelFiles.length) % modelFiles.length;
+      updateViewer();
+    }
+  </script>
+
+</body>
+</html>
