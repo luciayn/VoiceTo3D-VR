@@ -42,13 +42,15 @@ The system uses the following models:
 The following image shows how VoiceTo3D handles different interactions, highlighting its ability to create, manipulate and disambiguate objects in VR scenes:
 ![Example](docs/example.png)
 
+## 3D Model Viewer
+Preview the generated 3D models in your browser using the [3D Model Viewer](https://luciayn.github.io/VoiceTo3D-VR/model_viewer.html).
+
 ## Project Structure
 Overview of the project organization:
 ```
 <root directory>
 ├── backend/
 │   ├─  color_extractor.py       # Extract color from images
-│   ├── html_template.py         # HTML to visualize glb model
 │   ├── image_to_3D.py           # Convert images to 3D
 │   ├── main.py                  # Backend entrypoint
 │   ├── object_definition.py     # Define object properties
@@ -74,9 +76,9 @@ Overview of the project organization:
 │   │   └── websocket.js         # Websocket client
 │   ├── app.html                 # Frontend entrypoint
 │   └── styles.css               # Frontend styles
-├── html/                 # Pre-rendered object HTML files
 ├── images/               # Image assets
 ├── models/               # 3D model files (.glb)
+├── model_viewer.html     # HTML to visualize glb models
 ├── requirements.txt      # Python dependencies
 ├── LICENSE               # License file
 └── README.md             # Project documentation (this file)
